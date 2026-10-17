@@ -61,24 +61,24 @@ export default function Header() {
           </Link>
 
           <Link to="/oraclefusion-training">
-            <li className="hover:text-blue-600">Oracle Fusion</li>
+            <li className="hover:text-blue-600">Oracle Fusion Tech</li>
           </Link>
 
-          {/* <Link to="/react-training">
-            <li className="hover:text-blue-600">React</li>
-          </Link> */}
+          <Link to="/oraclefusion-training">
+            <li className="hover:text-blue-600">OIC </li>
+          </Link>
 
-          {/* <Link to="/angular-training">
-            <li className="hover:text-blue-600">Angular</li>
-          </Link> */}
+          <Link to="/oraclefusion-training">
+            <li className="hover:text-blue-600">VBS/VBCS</li>
+          </Link>
 
-          {/* <Link to="/dotnet-training">
-            <li className="hover:text-blue-600">DotNet</li>
-          </Link> */}
+          <Link to="/oraclefusion-training">
+            <li className="hover:text-blue-600">BI Reports</li>
+          </Link>
 
-          {/* <Link to="/c-training">
-            <li className="hover:text-blue-600">C++</li>
-          </Link> */}
+          <Link to="/oraclefusion-training">
+            <li className="hover:text-blue-600">OTBI Reports</li>
+          </Link>
 
           <Link to="/about">
             <li className="hover:text-blue-600">About</li>
@@ -95,24 +95,6 @@ export default function Header() {
       </div>
 
       {/* Mobile Search */}
-      {/* <div className="md:hidden px-4 pb-3">
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white rounded-lg flex items-center px-3 py-2"
-        >
-          <input
-            type="text"
-            placeholder="Search..."
-            className="bg-transparent outline-none flex-1"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-
-          <button>
-            <FaSearch className="text-slate-600" />
-          </button>
-        </form>
-      </div> */}
 
       {/* Mobile Sidebar */}
       <div
@@ -135,25 +117,29 @@ export default function Header() {
 
           <Link to="/oraclefusion-training" onClick={() => setMenuOpen(false)}>
             <li className="px-6 py-4 hover:bg-slate-100 border-b">
-              Oracle Fusion
+              Oracle Fusion Tech
             </li>
           </Link>
 
-          {/* <Link to="/react-training" onClick={() => setMenuOpen(false)}>
-            <li className="px-6 py-4 hover:bg-slate-100 border-b">React</li>
-          </Link> */}
+          <Link to="/oraclefusion-training" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">OIC</li>
+          </Link>
 
-          {/* <Link to="/angular-training" onClick={() => setMenuOpen(false)}>
-            <li className="px-6 py-4 hover:bg-slate-100 border-b">Angular</li>
-          </Link> */}
+          <Link to="/oraclefusion-training" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">VBS/VBCS</li>
+          </Link>
 
-          {/* <Link to="/dotnet-training" onClick={() => setMenuOpen(false)}>
-            <li className="px-6 py-4 hover:bg-slate-100 border-b">Dotnet</li>
-          </Link> */}
+          <Link to="/oraclefusion-training" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">
+              BI Reports
+            </li>
+          </Link>
 
-          {/* <Link to="/c-training" onClick={() => setMenuOpen(false)}>
-            <li className="px-6 py-4 hover:bg-slate-100 border-b">C++</li>
-          </Link> */}
+          <Link to="/oraclefusion-training" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">
+              OTBI Reports
+            </li>
+          </Link>
 
           <Link to="/about" onClick={() => setMenuOpen(false)}>
             <li className="px-6 py-4 hover:bg-slate-100 border-b">About</li>
