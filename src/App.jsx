@@ -16,6 +16,10 @@ import ReactTraining from "./pages/ReactTraining";
 import AngularTraining from "./pages/AngularTraining";
 import DotNetTraining from "./pages/DotnetTraining";
 import CLanguage from "./pages/CLanguage";
+import OIC from "./pages/OIC";
+import VBS from "./pages/VBS";
+import BI_Reports from "./pages/BI_Reports";
+import OTBI_Reports from "./pages/OTBI_Reports";
 
 export default function App() {
   return (
@@ -28,7 +32,12 @@ export default function App() {
         <Route
           path="/oraclefusion-training"
           element={<OracleFusionTraining />}
-        ></Route>
+        />
+        <Route path="/oic" element={<OIC />} />
+        <Route path="/vbs" element={<VBS />} />
+        <Route path="/bi-reports" element={<BI_Reports />} />
+        <Route path="/otbi-reports" element={<OTBI_Reports />} />
+
         <Route path="/react-training" element={<ReactTraining />}></Route>
         <Route path="/angular-training" element={<AngularTraining />}></Route>
         <Route path="/dotnet-training" element={<DotNetTraining />}></Route>

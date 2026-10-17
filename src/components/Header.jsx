@@ -64,19 +64,19 @@ export default function Header() {
             <li className="hover:text-blue-600">Oracle Fusion Tech</li>
           </Link>
 
-          <Link to="/oraclefusion-training">
+          <Link to="/oic">
             <li className="hover:text-blue-600">OIC </li>
           </Link>
 
-          <Link to="/oraclefusion-training">
+          <Link to="/vbs">
             <li className="hover:text-blue-600">VBS/VBCS</li>
           </Link>
 
-          <Link to="/oraclefusion-training">
+          <Link to="/bi-reports">
             <li className="hover:text-blue-600">BI Reports</li>
           </Link>
 
-          <Link to="/oraclefusion-training">
+          <Link to="/otbi-reports">
             <li className="hover:text-blue-600">OTBI Reports</li>
           </Link>
 
@@ -121,21 +121,21 @@ export default function Header() {
             </li>
           </Link>
 
-          <Link to="/oraclefusion-training" onClick={() => setMenuOpen(false)}>
+          <Link to="/oic" onClick={() => setMenuOpen(false)}>
             <li className="px-6 py-4 hover:bg-slate-100 border-b">OIC</li>
           </Link>
 
-          <Link to="/oraclefusion-training" onClick={() => setMenuOpen(false)}>
+          <Link to="/vbs" onClick={() => setMenuOpen(false)}>
             <li className="px-6 py-4 hover:bg-slate-100 border-b">VBS/VBCS</li>
           </Link>
 
-          <Link to="/oraclefusion-training" onClick={() => setMenuOpen(false)}>
+          <Link to="/bi-reports" onClick={() => setMenuOpen(false)}>
             <li className="px-6 py-4 hover:bg-slate-100 border-b">
               BI Reports
             </li>
           </Link>
 
-          <Link to="/oraclefusion-training" onClick={() => setMenuOpen(false)}>
+          <Link to="/otbi-reports" onClick={() => setMenuOpen(false)}>
             <li className="px-6 py-4 hover:bg-slate-100 border-b">
               OTBI Reports
             </li>
