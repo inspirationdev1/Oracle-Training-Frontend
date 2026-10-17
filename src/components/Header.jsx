@@ -1,0 +1,180 @@
+import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+
+export default function Header() {
+  const { currentUser } = useSelector((state) => state.user);
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set("searchTerm", searchTerm);
+    navigate(`/search?${urlParams.toString()}`);
+  };
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchTermFromUrl = urlParams.get("searchTerm");
+
+    if (searchTermFromUrl) {
+      setSearchTerm(searchTermFromUrl);
+    }
+  }, []);
+
+  return (
+    <header className="bg-slate-200 shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/">
+          <h1 className="font-bold text-lg md:text-2xl text-slate-700">
+            Inspiration I.T Training
+          </h1>
+        </Link>
+
+        {/* Search Box */}
+        {/* <form
+          onSubmit={handleSubmit}
+          className="hidden md:flex bg-white rounded-lg px-3 py-2 items-center shadow"
+        >
+          <input
+            type="text"
+            placeholder="Search..."
+            className="bg-transparent outline-none w-56"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button>
+            <FaSearch className="text-slate-600" />
+          </button>
+        </form> */}
+
+        {/* Desktop Menu */}
+        <ul className="hidden lg:flex items-center gap-6 text-slate-700 font-medium">
+          <Link to="/">
+            <li className="hover:text-blue-600">Home</li>
+          </Link>
+
+          <Link to="/oraclefusion-training">
+            <li className="hover:text-blue-600">Oracle Fusion</li>
+          </Link>
+
+          <Link to="/react-training">
+            <li className="hover:text-blue-600">React</li>
+          </Link>
+
+          <Link to="/angular-training">
+            <li className="hover:text-blue-600">Angular</li>
+          </Link>
+
+          <Link to="/dotnet-training">
+            <li className="hover:text-blue-600">DotNet</li>
+          </Link>
+
+          <Link to="/c-training">
+            <li className="hover:text-blue-600">C++</li>
+          </Link>
+
+          <Link to="/about">
+            <li className="hover:text-blue-600">About</li>
+          </Link>
+        </ul>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden text-2xl text-slate-700"
+          onClick={() => setMenuOpen(true)}
+        >
+          <FaBars />
+        </button>
+      </div>
+
+      {/* Mobile Search */}
+      {/* <div className="md:hidden px-4 pb-3">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white rounded-lg flex items-center px-3 py-2"
+        >
+          <input
+            type="text"
+            placeholder="Search..."
+            className="bg-transparent outline-none flex-1"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+
+          <button>
+            <FaSearch className="text-slate-600" />
+          </button>
+        </form>
+      </div> */}
+
+      {/* Mobile Sidebar */}
+      <div
+        className={`fixed top-0 right-0 h-full w-72 bg-white shadow-xl transform transition-transform duration-300 z-50 ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex justify-between items-center p-5 border-b">
+          <h2 className="font-bold text-lg">Menu</h2>
+
+          <button onClick={() => setMenuOpen(false)} className="text-2xl">
+            <FaTimes />
+          </button>
+        </div>
+
+        <ul className="flex flex-col text-lg">
+          <Link to="/" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">Home</li>
+          </Link>
+
+          <Link to="/oraclefusion-training" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">
+              Oracle Fusion
+            </li>
+          </Link>
+
+          <Link to="/react-training" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">React</li>
+          </Link>
+
+          <Link to="/angular-training" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">Angular</li>
+          </Link>
+
+          <Link to="/dotnet-training" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">Dotnet</li>
+          </Link>
+
+          <Link to="/c-training" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">C++</li>
+          </Link>
+
+          <Link to="/about" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">About</li>
+          </Link>
+
+          {/* Profile */}
+          {/* <Link to="/profile" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">
+              {currentUser ? "Profile" : "Sign In"}
+            </li>
+          </Link> */}
+        </ul>
+      </div>
+
+      {/* Background Overlay */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+          onClick={() => setMenuOpen(false)}
+        ></div>
+      )}
+    </header>
+  );
+}
