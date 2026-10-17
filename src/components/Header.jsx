@@ -33,7 +33,7 @@ export default function Header() {
         {/* Logo */}
         <Link to="/">
           <h1 className="font-bold text-lg md:text-2xl text-slate-700">
-            Inspiration I.T Training
+            Inspiration Oracle Tech Training
           </h1>
         </Link>
 
@@ -64,21 +64,21 @@ export default function Header() {
             <li className="hover:text-blue-600">Oracle Fusion</li>
           </Link>
 
-          <Link to="/react-training">
+          {/* <Link to="/react-training">
             <li className="hover:text-blue-600">React</li>
-          </Link>
+          </Link> */}
 
-          <Link to="/angular-training">
+          {/* <Link to="/angular-training">
             <li className="hover:text-blue-600">Angular</li>
-          </Link>
+          </Link> */}
 
-          <Link to="/dotnet-training">
+          {/* <Link to="/dotnet-training">
             <li className="hover:text-blue-600">DotNet</li>
-          </Link>
+          </Link> */}
 
-          <Link to="/c-training">
+          {/* <Link to="/c-training">
             <li className="hover:text-blue-600">C++</li>
-          </Link>
+          </Link> */}
 
           <Link to="/about">
             <li className="hover:text-blue-600">About</li>
@@ -139,21 +139,21 @@ export default function Header() {
             </li>
           </Link>
 
-          <Link to="/react-training" onClick={() => setMenuOpen(false)}>
+          {/* <Link to="/react-training" onClick={() => setMenuOpen(false)}>
             <li className="px-6 py-4 hover:bg-slate-100 border-b">React</li>
-          </Link>
+          </Link> */}
 
-          <Link to="/angular-training" onClick={() => setMenuOpen(false)}>
+          {/* <Link to="/angular-training" onClick={() => setMenuOpen(false)}>
             <li className="px-6 py-4 hover:bg-slate-100 border-b">Angular</li>
-          </Link>
+          </Link> */}
 
-          <Link to="/dotnet-training" onClick={() => setMenuOpen(false)}>
+          {/* <Link to="/dotnet-training" onClick={() => setMenuOpen(false)}>
             <li className="px-6 py-4 hover:bg-slate-100 border-b">Dotnet</li>
-          </Link>
+          </Link> */}
 
-          <Link to="/c-training" onClick={() => setMenuOpen(false)}>
+          {/* <Link to="/c-training" onClick={() => setMenuOpen(false)}>
             <li className="px-6 py-4 hover:bg-slate-100 border-b">C++</li>
-          </Link>
+          </Link> */}
 
           <Link to="/about" onClick={() => setMenuOpen(false)}>
             <li className="px-6 py-4 hover:bg-slate-100 border-b">About</li>
