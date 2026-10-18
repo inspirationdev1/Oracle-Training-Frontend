@@ -1,244 +1,178 @@
 import React from "react";
 
-function Home() {
+export default function Home() {
   const features = [
-    "Experienced Industry Trainers",
-    "Practical Hands-on Sessions",
-    "Real-Time Project Experience",
-    "Interview Preparation",
-    "Resume Building Assistance",
-    "Mock Interviews",
-    "Flexible Online & Offline Training",
-    "Career Guidance",
-    "Placement Support",
-    "Small Batch Size",
-    "Updated Course Curriculum",
-  ];
-  const teaching = [
-    "Instructor-led Live Sessions",
-    "Practical Coding Exercises",
-    "Real-world Case Studies",
-    "Assignments After Every Module",
-    "Mini Projects",
-    "Capstone Project",
-    "Interview Questions & Answers",
-    "Resume Preparation",
-    "Live Doubt-Clearing Sessions",
-  ];
-  const who = [
-    "Students",
-    "Fresh Graduates",
-    "Software Developers",
-    "Working Professionals",
-    "Career Switchers",
-    "IT Consultants",
-    "Anyone interested in Oracle Fusion or Frontend Development",
-  ];
-  const values = [
-    "Excellence in Training",
-    "Practical Learning",
-    "Student Success",
-    "Continuous Innovation",
-    "Professional Integrity",
-    "Lifelong Learning",
-    "Industry Relevance",
-  ];
-  const oracle = [
-    "Oracle Fusion HCM",
-    "Oracle ERP Cloud",
-    "Oracle SCM Cloud",
-    "Oracle Financials",
+    "Oracle Fusion Technical",
     "Oracle Integration Cloud (OIC)",
-    "Oracle Visual Builder Cloud Service (VBCS)",
-    "Oracle SQL",
-    "Integration Development",
-    "REST & SOAP Web Services",
-  ];
-  const react = [
-    "JavaScript ES6+",
-    "JSX",
-    "Components",
-    "Props & State",
-    "React Hooks",
-    "Routing",
-    "Forms & Validation",
-    "API Integration",
-    "Redux",
-    "Context API",
-    "Authentication",
+    "Visual Builder Studio (VBS/VBCS)",
+    "BI Reports (BIP)",
+    "OTBI Reports",
+    "Fast Formula",
+    "REST & SOAP APIs",
+    "HDL & HSDL",
+    "Security & Roles",
+    "SQL & PL/SQL",
     "Real-Time Projects",
+    "Interview Preparation",
   ];
-  const angular = [
-    "TypeScript",
-    "Components",
-    "Directives",
-    "Services",
-    "Dependency Injection",
-    "Routing",
-    "Reactive Forms",
-    "RxJS",
-    "HTTP Client",
-    "Authentication",
-    "State Management",
-    "Enterprise Projects",
-  ];
-  const Card = ({ title, color, items }) => (
-    <div className="bg-white rounded-2xl shadow-lg p-6 hover:-translate-y-1 transition">
-      <h3 className={`text-2xl font-bold mb-4 ${color}`}>{title}</h3>
-      <ul className="space-y-2 text-gray-600">
-        {items.map((i) => (
-          <li key={i}>✔ {i}</li>
-        ))}
-      </ul>
-    </div>
-  );
+
   return (
-    <div className="bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 py-16 space-y-16">
-        <section className="text-center">
-          {/* <span className="text-pink-600 font-semibold uppercase">
-            I.T Training
-          </span> */}
-          <h1 className="text-5xl font-bold mt-4">
-            Welcome to{" "}
-            <span className="text-blue-700">Inspiration I.T. Training</span>
-          </h1>
-          <p className="max-w-4xl mx-auto mt-6 text-gray-600 leading-8">
-            Inspiration I.T. Training is a professional IT training institute
-            dedicated to helping students, graduates, job seekers and working
-            professionals build successful careers. We specialize in Oracle
-            Fusion Cloud Technologies, ReactJS and Angular with practical,
-            industry-focused training.
-          </p>
-          <div className="mt-8 flex justify-center gap-4">
-            <button className="bg-blue-700 text-white px-6 py-3 rounded-lg">
-              Explore Courses
-            </button>
-            <button className="border border-pink-600 text-pink-600 px-6 py-3 rounded-lg">
-              Contact Us
-            </button>
-          </div>
-        </section>
+    <div className="bg-gray-50 min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-red-700 to-red-500 text-white py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+                Oracle Technical Training
+              </h1>
 
-        <section className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl shadow p-8">
-            <h2 className="text-3xl font-bold text-blue-700 mb-4">
-              Our Vision
-            </h2>
-            <p className="text-gray-600">
-              To become one of the most trusted IT training institutes by
-              empowering learners with practical technical skills, confidence
-              and career opportunities.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl shadow p-8">
-            <h2 className="text-3xl font-bold text-pink-600 mb-4">
-              Our Mission
-            </h2>
-            <ul className="space-y-2 text-gray-600">
-              <li>✔ Deliver high-quality training</li>
-              <li>✔ Real-time projects</li>
-              <li>✔ Interview preparation</li>
-              <li>✔ Job-ready skills</li>
-              <li>✔ Modern technologies</li>
-            </ul>
-          </div>
-        </section>
+              <p className="mt-6 text-lg text-gray-100 leading-8">
+                Become an Oracle Fusion Technical Consultant by learning Oracle
+                Integration Cloud (OIC), Visual Builder Studio, BI Publisher,
+                OTBI Reports, Fast Formula, HDL, REST APIs and Real-Time Project
+                Development.
+              </p>
 
-        <section>
-          <h2 className="text-4xl font-bold text-center mb-10">
-            Our Training Programs
-          </h2>
-          <div className="grid lg:grid-cols-3 gap-8">
-            <Card
-              title="Oracle Fusion Cloud"
-              color="text-blue-700"
-              items={oracle}
-            />
-            <Card
-              title="ReactJS Development"
-              color="text-sky-600"
-              items={react}
-            />
-            <Card
-              title="Angular Development"
-              color="text-red-600"
-              items={angular}
-            />
-          </div>
-        </section>
+              <div className="flex flex-wrap gap-4 mt-8">
+                <button className="bg-white text-red-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100">
+                  Enroll Now
+                </button>
 
-        <section>
-          <h2 className="text-4xl font-bold text-center mb-10">
-            Why Choose Us?
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {features.map((f) => (
-              <div key={f} className="bg-white rounded-xl p-5 shadow">
-                ✅ {f}
+                <button className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-red-700">
+                  Download Syllabus
+                </button>
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
 
-        <section className="grid lg:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl shadow p-8">
-            <h2 className="text-3xl font-bold mb-4">Our Teaching Approach</h2>
-            <ul className="space-y-2">
-              {teaching.map((t) => (
-                <li key={t}>📘 {t}</li>
-              ))}
-            </ul>
+            <div className="flex justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                alt="Oracle Training"
+                className="rounded-xl shadow-2xl w-full max-w-lg"
+              />
+            </div>
           </div>
-          <div className="bg-white rounded-2xl shadow p-8">
-            <h2 className="text-3xl font-bold mb-4">Who Can Join?</h2>
-            <ul className="space-y-2">
-              {who.map((w) => (
-                <li key={w}>🎓 {w}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-white rounded-2xl shadow p-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">Our Commitment</h2>
-          <p className="text-gray-600 leading-8">
-            We are committed to helping every learner achieve career success
-            through quality education, practical knowledge and continuous
-            mentorship.
-          </p>
-        </section>
+      {/* Course Modules */}
 
-        <section>
-          <h2 className="text-4xl font-bold text-center mb-8">
-            Our Core Values
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Course Modules
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {values.map((v) => (
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map((item, index) => (
               <div
-                key={v}
-                className="bg-blue-700 text-white rounded-xl p-5 text-center"
+                key={index}
+                className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
               >
-                {v}
+                <h3 className="font-semibold text-lg">{item}</h3>
+
+                <p className="text-gray-600 mt-3">
+                  Practical hands-on sessions with real industry examples.
+                </p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="rounded-3xl bg-gradient-to-r from-blue-700 to-pink-600 text-white text-center py-16 px-8">
-          <h2 className="text-5xl font-bold">Your Career Starts Here</h2>
-          <p className="mt-4 text-xl">Learn. Practice. Build. Grow.</p>
-          <p className="max-w-3xl mx-auto mt-6">
-            Whether your goal is to become an Oracle Fusion Consultant, React
-            Developer or Angular Developer, we provide the knowledge, mentorship
-            and practical experience to help you succeed.
+      {/* Why Choose Us */}
+
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Why Choose Inspiration Academy?
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center p-6 shadow rounded-lg">
+              <h3 className="font-bold text-xl mb-3">Experienced Trainer</h3>
+              <p>
+                Learn from Oracle Fusion industry professionals with years of
+                implementation experience.
+              </p>
+            </div>
+
+            <div className="text-center p-6 shadow rounded-lg">
+              <h3 className="font-bold text-xl mb-3">Live Projects</h3>
+              <p>Work on real Oracle Fusion implementation projects.</p>
+            </div>
+
+            <div className="text-center p-6 shadow rounded-lg">
+              <h3 className="font-bold text-xl mb-3">Placement Support</h3>
+              <p>Resume preparation, mock interviews and job assistance.</p>
+            </div>
+
+            <div className="text-center p-6 shadow rounded-lg">
+              <h3 className="font-bold text-xl mb-3">Recorded Sessions</h3>
+              <p>Lifetime access to recorded classes and training materials.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Training Details */}
+
+      <section className="py-16 bg-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-10">
+            <div className="bg-white p-8 rounded-lg shadow">
+              <h3 className="text-2xl font-bold mb-5">Training Highlights</h3>
+
+              <ul className="space-y-3 list-disc pl-5">
+                <li>100% Practical Sessions</li>
+                <li>Weekend & Weekday Batches</li>
+                <li>Online Live Training</li>
+                <li>Project Based Learning</li>
+                <li>Certification Guidance</li>
+                <li>Interview Questions</li>
+                <li>Resume Preparation</li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow">
+              <h3 className="text-2xl font-bold mb-5">Technologies Covered</h3>
+
+              <ul className="space-y-3 list-disc pl-5">
+                <li>Oracle Fusion HCM</li>
+                <li>Oracle Fusion ERP</li>
+                <li>Oracle OIC</li>
+                <li>Visual Builder Studio</li>
+                <li>BI Publisher</li>
+                <li>OTBI</li>
+                <li>REST APIs</li>
+                <li>SOAP Services</li>
+                <li>HDL Loader</li>
+                <li>SQL & PL/SQL</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+
+      <section className="bg-red-700 text-white py-16">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold">
+            Start Your Oracle Fusion Career Today
+          </h2>
+
+          <p className="mt-5 text-lg">
+            Join our live online training and become an Oracle Fusion Technical
+            Consultant with real-time implementation knowledge.
           </p>
-          <button className="mt-8 bg-white text-blue-700 font-semibold px-8 py-3 rounded-lg">
-            Enroll Today
+
+          <button className="mt-8 bg-white text-red-700 font-semibold px-8 py-3 rounded-lg hover:bg-gray-200">
+            Contact Us
           </button>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }
-export default Home;
