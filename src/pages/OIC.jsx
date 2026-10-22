@@ -1,6 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function OIC() {
+  const { currentUser } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
   const modules = [
     {
       number: "01",
@@ -180,12 +185,34 @@ export default function OIC() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
-                <a
+                {/* <a
                   href="#contact"
                   className="rounded-lg bg-white px-6 py-3 font-semibold text-red-700 transition hover:bg-gray-100"
                 >
                   Enroll Now
-                </a>
+                </a> */}
+                {!currentUser && (
+                  <div className="flex items-center gap-4">
+                    {/* Enroll Button */}
+                    <button
+                      type="button"
+                      onClick={() => navigate("/sign-up")}
+                      className="bg-white text-red-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition duration-300"
+                    >
+                      Enroll Now
+                    </button>
+
+                    {/* Login Button */}
+                    <button
+                      type="button"
+                      onClick={() => navigate("/sign-in")}
+                      // className="bg-red-700 text-white font-semibold px-6 py-3 rounded-lg border border-white hover:bg-red-800 transition duration-300"
+                      className="bg-white text-red-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition duration-300"
+                    >
+                      Login
+                    </button>
+                  </div>
+                )}
 
                 <a
                   href="#syllabus"
@@ -595,12 +622,19 @@ export default function OIC() {
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
+            {/* <a
               href="mailto:info@inspirationsms.com?subject=Oracle%20OIC%20Training%20Enquiry"
               className="rounded-lg bg-white px-8 py-3 font-semibold text-red-700 transition hover:bg-gray-100"
             >
               Enquire Now
-            </a>
+            </a> */}
+            <button
+              type="button"
+              onClick={() => navigate("/contact")}
+              className="rounded-lg bg-white px-8 py-3 font-semibold text-red-700 transition hover:bg-gray-100"
+            >
+              Contact Us
+            </button>
 
             <a
               href="#syllabus"

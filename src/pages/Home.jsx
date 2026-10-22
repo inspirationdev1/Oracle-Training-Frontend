@@ -1,6 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function Home() {
+  const { currentUser } = useSelector((state) => state.user);
+  const navigate = useNavigate();
   const features = [
     "Oracle Fusion Technical",
     "Oracle Integration Cloud (OIC)",
@@ -15,6 +19,42 @@ export default function Home() {
     "Real-Time Projects",
     "Interview Preparation",
   ];
+
+  const syllabusUrl =
+    "https://res.cloudinary.com/da3dxqer8/image/upload/v1792660778/Oracle_Fusion_Cloud_Tech_Content_SaaSandPaaS_jhl6ew.pdf";
+
+  const downloadSyllabus = async () => {
+    try {
+      const response = await fetch(syllabusUrl);
+
+      if (!response.ok) {
+        throw new Error("Failed to download syllabus");
+      }
+
+      const blob = await response.blob();
+      const downloadUrl = window.URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.download = "Oracle-Fusion-Technical-Syllabus.pdf";
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      window.URL.revokeObjectURL(downloadUrl);
+    } catch (error) {
+      console.error("Syllabus download failed:", error);
+
+      // Fallback: open the PDF in a new tab
+      window.open(syllabusUrl, "_blank", "noopener,noreferrer");
+    }
+  };
+
+  const viewUploadFile = (fileName) => {
+    const fileUrl = `${fileName}`;
+    window.open(fileUrl, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -35,11 +75,40 @@ export default function Home() {
               </p>
 
               <div className="flex flex-wrap gap-4 mt-8">
-                <button className="bg-white text-red-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100">
+                {/* <button className="bg-white text-red-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100">
                   Enroll Now
-                </button>
+                </button> */}
+                {!currentUser && (
+                  <div className="flex items-center gap-4">
+                    {/* Enroll Button */}
+                    <button
+                      type="button"
+                      onClick={() => navigate("/sign-up")}
+                      className="bg-white text-red-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition duration-300"
+                    >
+                      Enroll Now
+                    </button>
 
-                <button className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-red-700">
+                    {/* Login Button */}
+                    <button
+                      type="button"
+                      onClick={() => navigate("/sign-in")}
+                      // className="bg-red-700 text-white font-semibold px-6 py-3 rounded-lg border border-white hover:bg-red-800 transition duration-300"
+                      className="bg-white text-red-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition duration-300"
+                    >
+                      Login
+                    </button>
+                  </div>
+                )}
+
+                {/* <button className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-red-700">
+                  Download Syllabus
+                </button> */}
+                <button
+                  type="button"
+                  onClick={downloadSyllabus}
+                  className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-red-700 transition duration-300"
+                >
                   Download Syllabus
                 </button>
               </div>
@@ -168,7 +237,14 @@ export default function Home() {
             Consultant with real-time implementation knowledge.
           </p>
 
-          <button className="mt-8 bg-white text-red-700 font-semibold px-8 py-3 rounded-lg hover:bg-gray-200">
+          {/* <button className="mt-8 bg-white text-red-700 font-semibold px-8 py-3 rounded-lg hover:bg-gray-200">
+            Contact Us
+          </button> */}
+          <button
+            type="button"
+            onClick={() => navigate("/contact")}
+            className="mt-8 bg-white text-red-700 font-semibold px-8 py-3 rounded-lg hover:bg-gray-200"
+          >
             Contact Us
           </button>
         </div>

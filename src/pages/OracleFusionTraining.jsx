@@ -1,6 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function OracleFusionTraining() {
+  const { currentUser } = useSelector((state) => state.user);
+  const navigate = useNavigate();
   const features = [
     "Experienced Oracle Fusion Trainers",
     "Real-Time Business Scenarios",
@@ -212,8 +216,16 @@ export default function OracleFusionTraining() {
                 >
                   Explore Training Modules
                 </button>
-                <button
+                {/* <button
                   onClick={scrollToContact}
+                  className="rounded-lg border border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue-800"
+                >
+                  Contact Us
+                </button> */}
+                <button
+                  type="button"
+                  onClick={() => navigate("/contact")}
+                  // className="mt-8 bg-white text-red-700 font-semibold px-8 py-3 rounded-lg hover:bg-gray-200"
                   className="rounded-lg border border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue-800"
                 >
                   Contact Us

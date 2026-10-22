@@ -1,10 +1,22 @@
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+import {
+  updateUserStart,
+  updateUserSuccess,
+  updateUserFailure,
+  deleteUserFailure,
+  deleteUserStart,
+  deleteUserSuccess,
+  signOutUserStart,
+  signOutUserSuccess,
+  signOutUserFailure,
+} from "../redux/user/userSlice.js";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   const [searchTerm, setSearchTerm] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,6 +28,21 @@ export default function Header() {
     const urlParams = new URLSearchParams(window.location.search);
     urlParams.set("searchTerm", searchTerm);
     navigate(`/search?${urlParams.toString()}`);
+  };
+
+  const handleSignOut = async () => {
+    try {
+      dispatch(signOutUserStart());
+      const res = await fetch("/api/auth/signout");
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(deleteUserFailure(data.message));
+        return;
+      }
+      dispatch(deleteUserSuccess(data));
+    } catch (error) {
+      dispatch(deleteUserFailure(data.message));
+    }
   };
 
   useEffect(() => {
@@ -83,6 +110,19 @@ export default function Header() {
           <Link to="/about">
             <li className="hover:text-blue-600">About</li>
           </Link>
+
+          {/* <button >
+            <li className="hover:text-blue-600">Logout</li>
+          </button> */}
+          {currentUser && (
+            <span
+              onClick={handleSignOut}
+              className="text-red-700 cursor-pointer"
+            >
+              {/* Sign out */}
+              <li className="hover:text-blue-600">Sign out</li>
+            </span>
+          )}
         </ul>
 
         {/* Mobile Menu Button */}

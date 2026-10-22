@@ -20,6 +20,7 @@ import OIC from "./pages/OIC";
 import VBS from "./pages/VBS";
 import BI_Reports from "./pages/BI_Reports";
 import OTBI_Reports from "./pages/OTBI_Reports";
+import Contact from "./components/Contact";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/sign-in" element={<SignIn />}></Route>
         <Route path="/sign-up" element={<SignUp />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
         <Route
           path="/oraclefusion-training"
           element={<OracleFusionTraining />}
