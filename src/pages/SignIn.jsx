@@ -8,7 +8,6 @@ import {
 } from "../redux/user/userSlice.js";
 import OAuth from "../components/OAuth.jsx";
 
-
 export default function SignIn() {
   const [formData, setFormData] = useState({});
   const { loading, error } = useSelector((state) => state.user);
@@ -33,8 +32,8 @@ export default function SignIn() {
         body: JSON.stringify(formData),
       });
 
-      
       const data = await res.json();
+      console.log("Irfan-1");
       console.log(data);
       if (data.success === false) {
         dispatch(signInFailure(data.message));
