@@ -21,7 +21,8 @@ export default function SignIn() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log("Irfan-1");
+    console.log(formData);
     try {
       dispatch(signInStart());
       const res = await fetch("/api/auth/signin", {
@@ -33,7 +34,7 @@ export default function SignIn() {
       });
 
       const data = await res.json();
-      console.log("Irfan-1");
+      console.log("Irfan-2");
       console.log(data);
       if (data.success === false) {
         dispatch(signInFailure(data.message));
