@@ -11,19 +11,22 @@ export default function CorporateTraining() {
       title: "Oracle Fusion HCM",
       description:
         "Train HR and technical teams on workforce structures, core HR processes, employee lifecycle transactions, security, and reporting.",
-      topics: "Core HR · Workforce Structures · Roles & Security · HCM Reporting",
+      topics:
+        "Core HR · Workforce Structures · Roles & Security · HCM Reporting",
     },
     {
       title: "Oracle Fusion ERP",
       description:
         "Build practical knowledge of enterprise finance and procurement processes, including how teams work with transactions and business controls.",
-      topics: "Financials · Payables · Receivables · General Ledger · Procurement",
+      topics:
+        "Financials · Payables · Receivables · General Ledger · Procurement",
     },
     {
       title: "Oracle Fusion SCM",
       description:
         "Help supply chain teams understand supported inventory, purchasing, order management, and operational business flows.",
-      topics: "Inventory · Purchasing · Order Management · Supply Chain Processes",
+      topics:
+        "Inventory · Purchasing · Order Management · Supply Chain Processes",
     },
     {
       title: "Oracle Integration Cloud (OIC)",
@@ -35,13 +38,15 @@ export default function CorporateTraining() {
       title: "VBS / VBCS",
       description:
         "Introduce teams to low-code application development, user interface customization, business objects, and service integrations.",
-      topics: "Visual Builder · UI Design · Business Objects · Service Connections",
+      topics:
+        "Visual Builder · UI Design · Business Objects · Service Connections",
     },
     {
       title: "BI Publisher & OTBI",
       description:
         "Develop reporting skills for operational and management needs through formatted reports, analyses, dashboards, and business metrics.",
-      topics: "Data Models · RTF Templates · Analyses · Dashboards · Report Security",
+      topics:
+        "Data Models · RTF Templates · Analyses · Dashboards · Report Security",
     },
   ];
 
@@ -178,11 +183,10 @@ export default function CorporateTraining() {
               Oracle Fusion Corporate Training
             </h1>
             <p className="mt-6 text-lg leading-8 text-red-50">
-              Empower your workforce with practical Oracle Fusion Cloud
-              training tailored to your organization's goals. Upskill
-              functional, technical, integration, and reporting teams through
-              structured learning, guided exercises, and business-focused
-              scenarios.
+              Empower your workforce with practical Oracle Fusion Cloud training
+              tailored to your organization's goals. Upskill functional,
+              technical, integration, and reporting teams through structured
+              learning, guided exercises, and business-focused scenarios.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -193,7 +197,7 @@ export default function CorporateTraining() {
                     onClick={() => navigate("/sign-up")}
                     className="rounded-lg bg-white px-6 py-3 font-semibold text-red-700 transition hover:bg-gray-100"
                   >
-                    Get Started
+                    Enroll Now
                   </button>
                   <button
                     type="button"
@@ -398,8 +402,8 @@ export default function CorporateTraining() {
               Depending on the selected track, sessions can include instructor
               demonstrations, guided practice, process walkthroughs, report
               building, integration concepts, data validation, and
-              troubleshooting discussions. Exercises should be aligned with
-              the agreed syllabus and the access available to participants.
+              troubleshooting discussions. Exercises should be aligned with the
+              agreed syllabus and the access available to participants.
             </p>
             <div className="mt-7 space-y-4">
               {[
