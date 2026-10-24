@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { baseUrl } from "../environment.js";
 
 export default function VBS() {
   const { currentUser } = useSelector((state) => state.user);

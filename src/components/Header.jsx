@@ -13,6 +13,7 @@ import {
   signOutUserSuccess,
   signOutUserFailure,
 } from "../redux/user/userSlice.js";
+import { baseUrl } from "../environment.js";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
@@ -33,7 +34,8 @@ export default function Header() {
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await fetch("/api/auth/signout");
+      
+      const res = await fetch(`${baseUrl}/auth/signout`);
       const data = await res.json();
       if (data.success === false) {
         dispatch(deleteUserFailure(data.message));

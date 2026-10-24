@@ -7,7 +7,6 @@ import {
   signInFailure,
 } from "../redux/user/userSlice.js";
 import OAuth from "../components/OAuth.jsx";
-// import { baseUrl } from "../../../environment";
 import { baseUrl } from "../environment.js";
 
 export default function SignIn() {
@@ -24,11 +23,8 @@ export default function SignIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Irfan-1");
-    console.log(formData);
+
     try {
-      // url = `${baseUrl}/school/login`;
-      //"/api/auth/signin"
       dispatch(signInStart());
       const res = await fetch(`${baseUrl}/auth/signin`, {
         method: "POST",
@@ -48,38 +44,7 @@ export default function SignIn() {
       dispatch(signInSuccess(data));
       navigate("/");
     } catch (error) {
-      // dispatch(signInFailure(data.message));
-      dispatch(signInFailure(error.message));
-    }
-  };
-
-  const handleSubmit_Orig = async (e) => {
-    e.preventDefault();
-    console.log("Irfan-1");
-    console.log(formData);
-    try {
-      // url = `${baseUrl}/school/login`;
-      dispatch(signInStart());
-      const res = await fetch("/api/auth/signin", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-      console.log("Irfan-2");
-      console.log(data);
-      if (data.success === false) {
-        dispatch(signInFailure(data.message));
-        return;
-      }
-      dispatch(signInSuccess(data));
-      navigate("/");
-    } catch (error) {
-      // dispatch(signInFailure(data.message));
-      dispatch(signInFailure(error.message));
+      dispatch(signInFailure(data.message));
     }
   };
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { baseUrl } from "../environment";
 
 export default function Contact({ listing }) {
   const [name, setName] = useState("");
@@ -30,7 +31,8 @@ export default function Contact({ listing }) {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/auth/sendemail", {
+      
+      const res = await fetch(`${baseUrl}/auth/sendemail`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

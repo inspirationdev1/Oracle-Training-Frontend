@@ -3,7 +3,7 @@ import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/
 import { app } from '../firebase';
 import {useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-
+import { baseUrl } from "../environment.js";
 
 export default function CreateListing() {
   const {currentUser} = useSelector(state => state.user);
@@ -122,7 +122,8 @@ export default function CreateListing() {
 
       setLoading(true);
       setError(false);
-      const res = await fetch("/api/listing/create", {
+      
+      const res = await fetch(`${baseUrl}/listing/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
