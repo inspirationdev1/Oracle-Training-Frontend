@@ -12,6 +12,7 @@ import Listing from "./pages/Listing";
 import Search from "./pages/Search";
 import ITTraining from "./pages/ITTraining";
 import OracleFusionTraining from "./pages/OracleFusionTraining";
+import CorporateTraining from "./pages/CorporateTraining";
 import ReactTraining from "./pages/ReactTraining";
 import AngularTraining from "./pages/AngularTraining";
 import DotNetTraining from "./pages/DotnetTraining";
@@ -35,6 +36,8 @@ export default function App() {
           path="/oraclefusion-training"
           element={<OracleFusionTraining />}
         />
+
+        <Route path="/corporate-training" element={<CorporateTraining />} />
         <Route path="/oic" element={<OIC />} />
         <Route path="/vbs" element={<VBS />} />
         <Route path="/bi-reports" element={<BI_Reports />} />

@@ -34,7 +34,7 @@ export default function Header() {
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      
+
       const res = await fetch(`${baseUrl}/auth/signout`);
       const data = await res.json();
       if (data.success === false) {
@@ -62,7 +62,10 @@ export default function Header() {
         {/* Logo */}
         <Link to="/">
           <h1 className="font-bold text-lg md:text-2xl text-slate-700">
-            Inspiration Oracle Tech Training
+            Inspiration
+          </h1>
+          <h1 className="font-bold text-lg md:text-2xl text-slate-700">
+            Oracle Tech Training
           </h1>
         </Link>
 
@@ -107,6 +110,10 @@ export default function Header() {
 
           <Link to="/otbi-reports">
             <li className="hover:text-blue-600">OTBI Reports</li>
+          </Link>
+
+          <Link to="/corporate-training">
+            <li className="hover:text-blue-600">Corporate Training</li>
           </Link>
 
           <Link to="/about">
@@ -180,6 +187,12 @@ export default function Header() {
           <Link to="/otbi-reports" onClick={() => setMenuOpen(false)}>
             <li className="px-6 py-4 hover:bg-slate-100 border-b">
               OTBI Reports
+            </li>
+          </Link>
+
+          <Link to="/corporate-training" onClick={() => setMenuOpen(false)}>
+            <li className="px-6 py-4 hover:bg-slate-100 border-b">
+              Corporate Training
             </li>
           </Link>
 
