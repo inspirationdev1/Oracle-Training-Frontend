@@ -206,11 +206,18 @@ export default function OTBI_Reports() {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <img
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
                 alt="Business intelligence analytics dashboard"
                 className="w-full rounded-xl shadow-2xl"
+              />
+            </div> */}
+            <div className="w-full flex justify-center">
+              <img
+                src="https://res.cloudinary.com/da3dxqer8/image/upload/v1793726843/Pic-2_liws2v.jpg"
+                alt="Cloud integration and enterprise technology"
+                className="w-full h-auto max-w-full rounded-2xl object-contain shadow-2xl"
               />
             </div>
           </div>

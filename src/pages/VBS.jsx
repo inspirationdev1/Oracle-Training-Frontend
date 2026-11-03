@@ -208,11 +208,19 @@ export default function VBS() {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                // src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                src="https://res.cloudinary.com/da3dxqer8/image/upload/v1793727179/Pic-3_xnapv4.jpg"
                 alt="Application development on a computer"
                 className="w-full rounded-xl shadow-2xl"
+              />
+            </div> */}
+            <div className="w-full flex justify-center overflow-hidden">
+              <img
+                src="https://res.cloudinary.com/da3dxqer8/image/upload/v1793727179/Pic-3_xnapv4.jpg"
+                alt="Application development on a computer"
+                className="w-auto h-auto max-w-full rounded-xl shadow-2xl object-contain"
               />
             </div>
           </div>

@@ -224,12 +224,19 @@ export default function CorporateTraining() {
           </div>
 
           <div className="relative">
-            <img
+            {/* <img
               src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
               alt="Corporate team collaborating during professional training"
               className="w-full rounded-2xl shadow-2xl"
-            />
-            <div className="absolute -bottom-5 left-4 right-4 rounded-xl bg-white p-5 text-gray-800 shadow-xl sm:left-8 sm:right-8">
+            /> */}
+            <div className="w-full flex justify-center">
+              <img
+                src="https://res.cloudinary.com/da3dxqer8/image/upload/v1793726843/Pic-2_liws2v.jpg"
+                alt="Cloud integration and enterprise technology"
+                className="w-full h-auto max-w-full rounded-2xl object-contain shadow-2xl"
+              />
+            </div>
+            <div className="absolute -bottom-15 left-4 right-4 rounded-xl bg-white p-5 text-gray-800 shadow-xl sm:left-8 sm:right-8">
               <p className="text-sm font-semibold uppercase tracking-wider text-red-700">
                 Training built around your team
               </p>

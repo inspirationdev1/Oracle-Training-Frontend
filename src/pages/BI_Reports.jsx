@@ -206,11 +206,18 @@ export default function BI_Reports() {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <img
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
                 alt="Business intelligence analytics dashboard"
                 className="w-full rounded-xl shadow-2xl"
+              />
+            </div> */}
+            <div className="w-full flex justify-center">
+              <img
+                src="https://res.cloudinary.com/da3dxqer8/image/upload/v1793726843/Pic-2_liws2v.jpg"
+                alt="Cloud integration and enterprise technology"
+                className="w-full h-auto max-w-full rounded-2xl object-contain shadow-2xl"
               />
             </div>
           </div>

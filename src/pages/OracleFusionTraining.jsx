@@ -250,19 +250,27 @@ export default function OracleFusionTraining() {
             </div>
 
             <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa"
+              {/* <img
+                // src="https://images.unsplash.com/photo-1451187580459-43490279c0fa"
+                src="https://res.cloudinary.com/da3dxqer8/image/upload/v1793726843/Pic-2_liws2v.jpg"
                 alt="Cloud technology and connected enterprise systems"
                 className="w-full rounded-2xl object-cover shadow-2xl lg:h-[440px]"
-              />
-              <div className="absolute -bottom-5 left-4 right-4 rounded-xl border border-white/30 bg-white p-5 text-gray-800 shadow-xl sm:left-8 sm:right-8">
+              /> */}
+              <div className="w-full flex justify-center">
+                <img
+                  src="https://res.cloudinary.com/da3dxqer8/image/upload/v1793726843/Pic-2_liws2v.jpg"
+                  alt="Cloud technology and connected enterprise systems"
+                  className="w-full h-auto max-w-full rounded-2xl object-contain shadow-2xl"
+                />
+              </div>
+              {/* <div className="absolute -bottom-5 left-4 right-4 rounded-xl border border-white/30 bg-white p-5 text-gray-800 shadow-xl sm:left-8 sm:right-8">
                 <p className="text-sm font-medium text-gray-500">
                   Learn across functional and technical paths
                 </p>
                 <p className="mt-2 text-lg font-bold">
                   Understand. Configure. Integrate. Deliver.
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

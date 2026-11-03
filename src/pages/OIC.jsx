@@ -231,20 +231,28 @@ export default function OIC() {
             </div>
 
             <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
+              {/* <img
+                // src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
+                src="https://res.cloudinary.com/da3dxqer8/image/upload/v1793726843/Pic-2_liws2v.jpg"
                 alt="Cloud integration and enterprise technology"
                 className="w-full rounded-2xl object-cover shadow-2xl lg:h-[440px]"
-              />
+              /> */}
+              <div className="w-full flex justify-center">
+                <img
+                  src="https://res.cloudinary.com/da3dxqer8/image/upload/v1793726843/Pic-2_liws2v.jpg"
+                  alt="Cloud integration and enterprise technology"
+                  className="w-full h-auto max-w-full rounded-2xl object-contain shadow-2xl"
+                />
+              </div>
 
-              <div className="absolute -bottom-5 left-4 right-4 rounded-xl border border-white/30 bg-white p-5 text-gray-800 shadow-xl sm:left-8 sm:right-8">
+              {/* <div className="absolute -bottom-5 left-4 right-4 rounded-xl border border-white/30 bg-white p-5 text-gray-800 shadow-xl sm:left-8 sm:right-8">
                 <p className="text-sm font-medium text-gray-500">
                   Learn the complete integration lifecycle
                 </p>
                 <p className="mt-2 text-lg font-bold">
                   Design. Integrate. Transform. Deploy.
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

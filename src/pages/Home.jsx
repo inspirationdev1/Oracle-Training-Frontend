@@ -117,7 +117,8 @@ export default function Home() {
 
             <div className="flex justify-center">
               <img
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                // src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                src="https://res.cloudinary.com/da3dxqer8/image/upload/v1793726600/Pic-1_hsdzc1.jpg"
                 alt="Oracle Training"
                 className="rounded-xl shadow-2xl w-full max-w-lg"
               />
