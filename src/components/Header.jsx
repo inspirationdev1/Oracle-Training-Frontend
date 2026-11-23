@@ -132,6 +132,12 @@ export default function Header() {
               <li className="hover:text-blue-600">Sign out</li>
             </span>
           )}
+
+          <Link to="/profile" onClick={() => setMenuOpen(false)}>
+            <li className="hover:text-blue-600">
+              {currentUser ? "Profile" : "Sign In"}
+            </li>
+          </Link>
         </ul>
 
         {/* Mobile Menu Button */}

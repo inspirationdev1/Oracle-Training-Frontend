@@ -80,7 +80,7 @@ export default function Profile() {
 
     try {
       dispatch(updateUserStart());
-      const res = await fetch(`/api/user/update/${currentUser._id}`, {
+      const res = await fetch(`${baseUrl}/user/update/${currentUser._id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -102,7 +102,7 @@ export default function Profile() {
   const handleDeleteUser = async () => {
     try {
       dispatch(deleteUserStart());
-      const res = await fetch(`/api/user/delete/${currentUser._id}`, {
+      const res = await fetch(`${baseUrl}/user/delete/${currentUser._id}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -135,7 +135,13 @@ export default function Profile() {
   const handleShowListings = async () => {
     try {
       setShowListingsError(false);
-      const res = await fetch(`/api/user/listings/${currentUser._id}`);
+      // const res = await fetch(`/api/user/listings/${currentUser._id}`);
+      // const res = await fetch(`${baseUrl}/user/listings/${currentUser._id}`);
+      const res = await fetch(`${baseUrl}/user/listings/${currentUser._id}`, {
+        method: "GET",
+        credentials: "include",
+      });
+      // const res = await fetch(`${baseUrl}/listing/get/${params.listingId}`);
       const data = await res.json();
       if (data.success === false) {
         setShowListingsError(true);
@@ -149,8 +155,9 @@ export default function Profile() {
 
   const handleListingDelete = async (listingId) => {
     try {
-      const res = await fetch(`/api/listing/delete/${listingId}`, {
+      const res = await fetch(`${baseUrl}/listing/delete/${listingId}`, {
         method: "DELETE",
+        credentials: "include",
       });
       const data = await res.json();
       if (data.success === false) {
